@@ -1,6 +1,6 @@
 AI Usage and Critique
-Group: [write your group name/number here, then delete these brackets]
-Members: Aung Myo Hlaing — 6705140040, plus [teammate names — replace this line with the real list]
+Group: Team X-Panda
+Members: Aung Myo Hlaing (Olary) — 6705140040, Hein Zaw Lin (Hubert) — 6705140038, Hein Thura Naung (Ivan) — 6705140056, Chan Myae Thaw Tar (Chan) — 6705140048, Aye Than Tin (Aye) — 6705140074
 Part 3a: Declaration (required)
 AI tool
 What we used it for

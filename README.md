@@ -1,9 +1,11 @@
 Submission — Server OS Midterm (192-442), Lab 01
-Group name / number: [write your group name/number here, then delete these brackets]
+Group name / number: Team X-Panda
 Members (name + GitHub username, one per line):
-Aung Myo Hlaing — 6705140040
-[teammate name] — [teammate GitHub username]
-[teammate name] — [teammate GitHub username]
+Aung Myo Hlaing (Olary) — 6705140040
+Hein Zaw Lin (Hubert) — 6705140038
+Hein Thura Naung (Ivan) — 6705140056
+Chan Myae Thaw Tar (Chan) — 6705140048
+Aye Than Tin (Aye) — 6705140074
 Company / domain you were assigned: novapeak — novapeak.lab
 Group id used with the checker: lab01
 Contents

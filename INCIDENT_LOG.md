@@ -1,6 +1,6 @@
 Incident Log
-Group: [write your group name/number here, then delete these brackets]
-Members: Aung Myo Hlaing — 6705140040, plus [teammate names — replace this line with the real list]
+Group: Team X-Panda
+Members: Aung Myo Hlaing (Olary) — 6705140040, Hein Zaw Lin (Hubert) — 6705140038, Hein Thura Naung (Ivan) — 6705140056, Chan Myae Thaw Tar (Chan) — 6705140048, Aye Than Tin (Aye) — 6705140074
 Company / domain: novapeak.lab
 Group id used with the checker: lab01
 Scenario (from python3 /root/grading/params.py lab01 — the single source of truth for this group):
@@ -46,7 +46,7 @@ Confirmation (output showing it now works):
   After this fix, queries reached named and the failure mode changed from
   timeout to SERVFAIL — proving the firewall was only the first fault,
   and exposing Fault 2 underneath it.
-Found/proved by: [write the name of the member who did this fault]
+Found/proved by: Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 Fault 2 — Forward zone points at a file that does not exist (db.MISSING)
 Symptom (what we observed):
@@ -79,7 +79,7 @@ Confirmation (output showing it now works):
 
   $ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
   www.novapeak.lab.    3600    IN    A    192.168.19.20
-Found/proved by: [write the name of the member who did this fault]
+Found/proved by: Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 Fault 3 — Wrong A record: api.novapeak.lab points at the gateway
 Symptom (what we observed):
@@ -109,7 +109,7 @@ Fix (what we changed):
 Confirmation (output showing it now works):
   Final checker C2 3.0/3 — all four A records correct, including
   api → 192.168.19.40.
-Found/proved by: [write the name of the member who did this fault]
+Found/proved by: Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 Fault 4 — DHCP advertises a public DNS server (8.8.8.8) instead of the company DNS
 Symptom (what we observed):
@@ -145,7 +145,7 @@ Fix (what we changed):
 Confirmation (output showing it now works):
   Final checker: C9 3/3 (DHCP advertises the company DNS 192.168.19.10)
   and C11 3/3 (client resolves www via the leased resolver).
-Found/proved by: [write the name of the member who did this fault]
+Found/proved by: Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 Final verification (all faults fixed)
 $ named-checkconf -z
