@@ -32,12 +32,11 @@ Group id used with the checker: lab01
 └── checker_result.txt
 ```
 
-- `fixed-configs/` — the repaired configuration. The firewall fault is a live
-  rule, not a file — its fix is documented in INCIDENT_LOG.md, Fault 1.
-- `INCIDENT_LOG.md` — how each of the 4 faults was found and proved (Part 2).
-- `AI_CRITIQUE.md` — AI declaration, comparison and verdict (Part 3).
-- `session.log` — recorded terminal session of the diagnosis and fixes.
-- `checker_result.txt` — live checker output from KillerCoda.
+- `fixed-configs/` — the configs we fixed. The firewall fault has no file, because it was a live rule. We wrote about it in INCIDENT_LOG.md, Fault 1.
+- `INCIDENT_LOG.md` — how we found and proved each of the 4 faults.
+- `AI_CRITIQUE.md` — what AI tools we used, how they did, and what we learned.
+- `session.log` — our recorded terminal session.
+- `checker_result.txt` — the live checker output from KillerCoda.
 
 ## Faults fixed
 
