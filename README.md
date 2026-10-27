@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Server OS Midterm — Lab 01 (novapeak)
 
 Group: Team X-Panda
@@ -51,7 +50,6 @@ What this repo contains
 ├── AI_CRITIQUE.md
 ├── session.log
 └── checker_result.txt
-<<<<<<< HEAD
 ```
 
 - `fixed-configs/` — the repaired configuration. The firewall fault is a live
