@@ -1,20 +1,7 @@
-# AI Usage Declaration and Audit
+## AI Usage and Critique
 
 Group: Team X-Panda
 Members: Aung Myo Hlaing (Olary) — 6705140040, Hein Zaw Lin (Hubert) — 6705140038, Hein Thura Naung (Ivan) — 6705140056, Chan Myae Thaw Tar (Chan) — 6705140048, Aye Than Tin (Aye) — 6705140074
-
-Lab 01, Part 3 of the midterm — AI Usage and Critique. Part 3a is required; using AI is allowed, not declaring it is not.
-
-Before you submit, check all eight boxes:
-
-- [ ] Part 3a declaration complete, or the "no AI used" statement written
-- [ ] All four faults appear in the comparison table with a verdict
-- [ ] Both AIs have been tested — Muse, and a second AI
-- [ ] Every audit entry names the member who did it
-- [ ] No claim made that you cannot demonstrate from pasted output
-- [ ] Live checker result included — baseline 11/25, final 25.0/25
-- [ ] Verdict written in Part 3d
-- [ ] File committed as `AI_CRITIQUE.md` in the repository root
 
 ## Part 3a: Declaration (required)
 
