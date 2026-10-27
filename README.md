@@ -17,7 +17,6 @@ Group id used with the checker: lab01
 ## What this repo contains
 
 ```
-=======
 Server OS Midterm — Lab 01 (novapeak)
 Group: Team X-Panda
 Company / domain: novapeak — novapeak.lab
@@ -36,7 +35,6 @@ Chan Myae Thaw Tar (Chan)
 Aye Than Tin (Aye)
 6705140074
 What this repo contains
->>>>>>> ddc607e97a27171b64ccac71a9cf1e0eecb446ed
 .
 ├── README.md
 ├── fixed-configs/
