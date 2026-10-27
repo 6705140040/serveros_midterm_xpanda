@@ -139,4 +139,3 @@ C11 — client resolves www via the leased resolver
 Total
 25.0 / 25
 Baseline before the fixes was 11/25. Full output is in checker_result.txt.
->>>>>>> ddc607e97a27171b64ccac71a9cf1e0eecb446ed
