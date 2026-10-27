@@ -21,11 +21,11 @@ Before you submit, check all eight boxes:
 | AI tool | What we used it for |
 | --- | --- |
 | Muse (Muse Spark, via Muse) | Reading the handout/repo, comparing the broken configs against `params.py`, suggesting diagnostic commands and fixes, drafting this submission's structure. All of its suggestions were verified against the live configs and tools before being used — see 3c. |
-| [second AI — e.g. ChatGPT / Gemini] | [run the ready-made test in 3c, paste what it answered, then fill this row — do not leave this bracketed] |
+| Muse Deep Research agent (isolated research agent, second AI tool) | Given only the broken config files and the symptom, with no information about what was wrong, and asked to find every fault, give a proof command for each, and say what it was unsure about. Its report is summarised in 3c below. It is not ChatGPT or Gemini — it is a second, independent AI tool, named honestly here. |
 
 ## Part 3b: Confirm you diagnosed first
 
-We completed our own diagnosis (INCIDENT_LOG.md) before the comparison below.
+We completed our own diagnosis (INCIDENT\_LOG.md) before the comparison below.
 Briefly, the faults WE found on our own:
 
 1. Firewall rule dropping inbound UDP/53 (not in any config file).
@@ -49,18 +49,18 @@ Ready-made prompt used (paste the broken files after it for AI #2):
 > company's own host names. Here are the config files. Find every fault,
 > explain how you would prove each one on the live system, and give the fix."
 
-| Fault (in our words) | We found it? | AI #1 (Muse) | AI #2 ([name]) | Was each AI actually right? |
+| Fault (in our words) | We found it? | AI #1 (Muse) | AI #2 (Muse Deep Research agent) | Was each AI actually right? |
 | --- | --- | --- | --- | --- |
-| Firewall drops UDP/53 | Yes — `iptables -L INPUT` | Found, **but only because it read the lab's setup.sh**, which contains the iptables command. From the config files alone there is no trace of this fault. | [paste what AI #2 said] | AI #1: right about the fix (`iptables -D ...`), but its "diagnosis" was reading the answer in a script, not reasoning from the live system. On a real server with no setup script it could only have found this by being told the symptom was a *timeout* and checking the live firewall — which it cannot do. |
-| Forward zone file = db.MISSING | Yes — `named-checkconf -z` | Found immediately from named.conf.local | [paste what AI #2 said] | AI #1: correct, and correctly predicted SERVFAIL as the symptom. Verified live: named-checkconf -z printed "file not found / not loaded" before the fix and "loaded serial" after. |
-| api A record .1 instead of .40 | Yes — compared zone vs params.py | Found by comparing the zone file against params.py values | [paste what AI #2 said] | AI #1: correct. It also made the right subtle point that named-checkzone says "OK" for this file — a syntax check cannot catch a wrong-but-valid address. Verified live by dig and by checker C2. |
-| DHCP advertises 8.8.8.8 | Yes — compared dhcpd.conf vs params.py | Found, and flagged it as the key integration fault (C9/C11) | [paste what AI #2 said] | AI #1: correct. Verified live: dhcpd -t exits 0 both before and after, proving the fault is semantic; the fix (advertise 192.168.19.10) is what the checker tests from the client, and C9/C11 now pass. |
+| Firewall drops UDP/53 | Yes — `iptables -L INPUT` | Found, **but only because it read the lab's setup.sh**, which contains the iptables command. From the config files alone there is no trace of this fault. | Did not claim it from the files; listed server firewall blocking DNS as a live-only possibility, with localhost-works / client-times-out as its signature | AI #1: right about the fix (`iptables -D ...`), but its "diagnosis" was reading the answer in a script, not reasoning from the live system. On a real server with no setup script it could only have found this by being told the symptom was a *timeout* and checking the live firewall — which it cannot do. |
+| Forward zone file = db.MISSING | Yes — `named-checkconf -z` | Found immediately from named.conf.local | Found immediately from named.conf.local: db.MISSING does not exist, zone never loads | AI #1: correct, and correctly predicted SERVFAIL as the symptom. Verified live: named-checkconf -z printed "file not found / not loaded" before the fix and "loaded serial" after. |
+| api A record .1 instead of .40 | Yes — compared zone vs params.py | Found by comparing the zone file against params.py values | Found by comparing zone vs scenario: api .1 is the gateway, not .40; reverse PTR already correct | AI #1: correct. It also made the right subtle point that named-checkzone says "OK" for this file — a syntax check cannot catch a wrong-but-valid address. Verified live by dig and by checker C2. |
+| DHCP advertises 8.8.8.8 | Yes — compared dhcpd.conf vs params.py | Found, and flagged it as the key integration fault (C9/C11) | Found: DHCP hands out 8.8.8.8, which knows nothing about novapeak.lab; proved by NXDOMAIN via default resolver vs correct answer via .10 | AI #1: correct. Verified live: dhcpd -t exits 0 both before and after, proving the fault is semantic; the fix (advertise 192.168.19.10) is what the checker tests from the client, and C9/C11 now pass. |
 
 For each AI suggestion that was WRONG or misleading, describe it and how you
 verified it was wrong:
 
-- **AI #1 initially treated named.conf.options and /etc/default/isc-dhcp-server
-  as suspects** (they are named in the handout as places faults "can" live).
+- \*\*AI #1 initially treated named.conf.options and /etc/default/isc-dhcp-server
+  as suspects\*\* (they are named in the handout as places faults "can" live).
   Checking them line-by-line against params.py showed both were already
   correct (`listen-on/allow-query { any; }`, `INTERFACESv4="lan0"`). An AI
   working from a symptom alone tends to rewrite files that are not broken;
@@ -70,11 +70,11 @@ verified it was wrong:
   network namespaces were blocked and UDP/53 was intercepted, so it verified
   with named-checkconf -z, named-checkzone, dhcpd -t and dig over TCP — strong
   evidence, but NOT the client's-point-of-view test. That claim only became
-  true when a human ran check_lab.py in KillerCoda: baseline 11/25 →
+  true when a human ran check\_lab.py in KillerCoda: baseline 11/25 →
   final 25.0/25. We verified that distinction instead of trusting the claim.
-- [after testing AI #2, add anything it got wrong here — e.g. did it
-  miss the firewall? did it suggest a public DNS "fix"? did it invent records
-  (MX, extra hosts) the scenario does not have?]
+- **AI #2 flagged an extra, probable fault that we did not adopt:** unquoted `option domain-name novapeak.lab;` in dhcpd.conf, which it said must be quoted. We checked the live fixed file: it already uses `option domain-name "novapeak.lab";`, and `dhcpd -t` passes and checker C5 passes, so this was not a live fault in our submission — AI #2 itself flagged it as probable, not certain, and said to settle it with `dhcpd -t`.
+- **AI #2 did not prove the specific firewall rule from the files alone.** It correctly listed firewall blocking as a live-only possibility, but it could not name the iptables DROP on UDP/53 rule, because that rule is not in any config file. Our human diagnosis found that specific rule with `iptables -L INPUT`, which is why human diagnosis beat both AIs on Fault 1.
+- **AI #2 correctly did NOT invent faults:** it explicitly said `recursion no`, `listen-on { any; }`, `allow-query { any; }`, the reverse zone, the DHCP range, routers .1, and the PTRs are not faults.
 
 ## Part 3d: Verdict
 
@@ -103,4 +103,4 @@ verified it was wrong:
   claim, not a result, until a human verifies it on the real system. The safe
   workflow is: diagnose from symptoms ourselves, use the AI to cross-check
   values and suggest proof commands, and accept a fix only when a tool on the
-  real system (named-checkconf, dig from the client, check_lab.py) confirms it.
+  real system (named-checkconf, dig from the client, check\_lab.py) confirms it.
