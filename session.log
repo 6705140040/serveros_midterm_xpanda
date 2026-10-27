@@ -32,7 +32,7 @@ root@ubuntu:~$ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
 ; (1 server found)
 ;; global options: +cmd
 ;; no servers could be reached
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
@@ -40,11 +40,11 @@ num  target     prot opt source               destination
 root@ubuntu:~$  iptables -D INPUT -p udp --dport 53 -j DROP
 root@ubuntu:~$  iptables -D INPUT -p udp --dport 53 -j DROP
 
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
-root@ubuntu:~$ named-checkconf named-checkconf -z
+root@ubuntu:~$ named-checkconf -z
 
 zone novapeak.lab/IN: loading from master file /etc/bind/db.MISSING failed: file not found
 zone novapeak.lab/IN: not loaded due to errors.
@@ -54,7 +54,7 @@ zone localhost/IN: loaded serial 2
 zone 127.in-addr.arpa/IN: loaded serial 1
 zone 0.in-addr.arpa/IN: loaded serial 1
 zone 255.in-addr.arpa/IN: loaded serial 1
-root@ubuntu:~$ cat /etc/bind/named.conf.loccat /etc/bind/named.conf.local
+root@ubuntu:~$ cat /etc/bind/named.conf.local
 
 zone "novapeak.lab" {
 	type master;
@@ -65,7 +65,8 @@ zone "19.168.192.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.novapeak.lab.rev";
 };
-root@ubunScript started on 2026-10-27 07:42:45+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="131" LINES="43"]
+root@ubuntu:~$
+Script started on 2026-10-27 07:42:45+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="131" LINES="43"]
 root@ubuntu:~$ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
 root@ubuntu:~$ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
 
@@ -77,7 +78,7 @@ root@ubuntu:~$ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
 ; (1 server found)
 ;; global options: +cmd
 ;; no servers could be reached
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
@@ -85,11 +86,11 @@ num  target     prot opt source               destination
 root@ubuntu:~$  iptables -D INPUT -p udp --dport 53 -j DROP
 root@ubuntu:~$  iptables -D INPUT -p udp --dport 53 -j DROP
 
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
-root@ubuntu:~$ named-checkconf named-checkconf -z
+root@ubuntu:~$ named-checkconf -z
 
 zone novapeak.lab/IN: loading from master file /etc/bind/db.MISSING failed: file not found
 zone novapeak.lab/IN: not loaded due to errors.
@@ -99,7 +100,7 @@ zone localhost/IN: loaded serial 2
 zone 127.in-addr.arpa/IN: loaded serial 1
 zone 0.in-addr.arpa/IN: loaded serial 1
 zone 255.in-addr.arpa/IN: loaded serial 1
-root@ubuntu:~$ cat /etc/bind/named.conf.loccat /etc/bind/named.conf.local
+root@ubuntu:~$ cat /etc/bind/named.conf.local
 
 zone "novapeak.lab" {
 	type master;
@@ -154,7 +155,8 @@ www.novapeak.lab.	3600	IN	A	192.168.19.20
 ;; WHEN: Tue Oct 27 07:46:32 UTC 2026
 ;; MSG SIZE  rcvd: 89
 
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUtu:~$ sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
+root@ubuntu:~$ sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
 
 systemctl restart named
 
@@ -198,7 +200,7 @@ www.novapeak.lab.	3600	IN	A	192.168.19.20
 ;; WHEN: Tue Oct 27 07:46:32 UTC 2026
 ;; MSG SIZE  rcvd: 89
 
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
@@ -206,11 +208,11 @@ root@ubuntu:~$ iptables -D INPUT -p udp --dport 53 -j DROP
 root@ubuntu:~$ iptables -D INPUT -p udp --dport 53 -j DROP
 
 iptables: Bad rule (does a matching rule exist in that chain?).
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
-root@ubuntu:~$ named-checkconf named-checkconf -z
+root@ubuntu:~$ named-checkconf -z
 
 zone novapeak.lab/IN: loaded serial 2024010101
 zone 19.168.192.in-addr.arpa/IN: loaded serial 2024010101
@@ -218,7 +220,7 @@ zone localhost/IN: loaded serial 2
 zone 127.in-addr.arpa/IN: loaded serial 1
 zone 0.in-addr.arpa/IN: loaded serial 1
 zone 255.in-addr.arpa/IN: loaded serial 1
-root@ubuntu:~$ cat /etc/bind/named.conf.loccat /etc/bind/named.conf.local
+root@ubuntu:~$ cat /etc/bind/named.conf.local
 
 zone "novapeak.lab" {
 	type master;
@@ -229,14 +231,14 @@ zone "19.168.192.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.novapeak.lab.rev";
 };
-root@ubuntu:~$ ls -l /etc/bind/dbls -l /etc/bind/db.
+root@ubuntu:~$ ls -l /etc/bind/db.
 
 ls: cannot access '/etc/bind/db.': No such file or directory
 root@ubuntu:~$ sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
 
    systemctl restart named
 
-   named-checkconf sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
+   named-checkconf -z
 
    systemctl restart named
 
@@ -258,11 +260,11 @@ root@ubuntu:~$ iptables -D INPUT -p udp --dport 53 -j DROP
 root@ubuntu:~$ iptables -D INPUT -p udp --dport 53 -j DROP
 
 iptables: Bad rule (does a matching rule exist in that chain?).
-root@ubuntu:~$ iptables -L INPUT -n --line-numberiptables -L INPUT -n --line-numbers
+root@ubuntu:~$ iptables -L INPUT -n --line-numbers
 
 Chain INPUT (policy ACCEPT)
 num  target     prot opt source               destination
-root@ubuntu:~$ named-checkconf named-checkconf -z
+root@ubuntu:~$ named-checkconf -z
 
 zone novapeak.lab/IN: loaded serial 2024010101
 zone 19.168.192.in-addr.arpa/IN: loaded serial 2024010101
@@ -270,7 +272,7 @@ zone localhost/IN: loaded serial 2
 zone 127.in-addr.arpa/IN: loaded serial 1
 zone 0.in-addr.arpa/IN: loaded serial 1
 zone 255.in-addr.arpa/IN: loaded serial 1
-root@ubuntu:~$ cat /etc/bind/named.conf.loccat /etc/bind/named.conf.local
+root@ubuntu:~$ cat /etc/bind/named.conf.local
 
 zone "novapeak.lab" {
 	type master;
@@ -281,14 +283,14 @@ zone "19.168.192.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.novapeak.lab.rev";
 };
-root@ubuntu:~$ ls -l /etc/bind/dbls -l /etc/bind/db.
+root@ubuntu:~$ ls -l /etc/bind/db.
 
 ls: cannot access '/etc/bind/db.': No such file or directory
 root@ubuntu:~$ sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
 
    systemctl restart named
 
-   named-checkconf sed -i 's/db.MISSING/db.novapeak.lab/' /etc/bind/named.conf.local
+   named-checkconf -z
 
    systemctl restart named
 
@@ -422,7 +424,6 @@ exit
 exit
 
 Script done on 2026-10-27 07:52:36+00:00 [COMMAND_EXIT_CODE="0"]
-7m
 
 sed -i 's/2024010101/2024010102/' /etc/bind/db.novapeak.lab
 
@@ -606,5 +607,3 @@ INCIDENT_LOG.md: command not found
 AI_CRITIQUE.md: command not found
 bash: syntax error near unexpected token `the'
 bash: syntax error near unexpected token `the'
-
-root@ubuntu:[
