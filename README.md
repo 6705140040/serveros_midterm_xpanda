@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Server OS Midterm — Lab 01 (novapeak)
 
 Group: Team X-Panda
@@ -18,7 +17,6 @@ Group id used with the checker: lab01
 ## What this repo contains
 
 ```
-=======
 Server OS Midterm — Lab 01 (novapeak)
 Group: Team X-Panda
 Company / domain: novapeak — novapeak.lab
@@ -37,7 +35,6 @@ Chan Myae Thaw Tar (Chan)
 Aye Than Tin (Aye)
 6705140074
 What this repo contains
->>>>>>> ddc607e97a27171b64ccac71a9cf1e0eecb446ed
 .
 ├── README.md
 ├── fixed-configs/
@@ -51,7 +48,6 @@ What this repo contains
 ├── AI_CRITIQUE.md
 ├── session.log
 └── checker_result.txt
-<<<<<<< HEAD
 ```
 
 - `fixed-configs/` — the repaired configuration. The firewall fault is a live
@@ -141,4 +137,3 @@ C11 — client resolves www via the leased resolver
 Total
 25.0 / 25
 Baseline before the fixes was 11/25. Full output is in checker_result.txt.
->>>>>>> ddc607e97a27171b64ccac71a9cf1e0eecb446ed
