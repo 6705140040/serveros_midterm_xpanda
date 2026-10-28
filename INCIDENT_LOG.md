@@ -130,7 +130,20 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
 - **Fix (what we changed):**
   In `/etc/bind/db.novapeak.lab`: `api IN A 192.168.19.1` → `api IN A 192.168.19.40`, zone serial 2024010101 → 2024010102, then `systemctl restart named`.
 - **Confirmation (output showing it now works):**
-  Final checker C2 3.0/3 — all four A records correct, including api → 192.168.19.40.
+
+  ```text
+  $ ip netns exec client dig @192.168.19.10 api.novapeak.lab A
+
+  ; <<>> DiG 9.18.39-0ubuntu0.24.04.8-Ubuntu <<>> @192.168.19.10 api.novapeak.lab A
+  ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63165
+  ;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+  ;; ANSWER SECTION:
+  api.novapeak.lab.    3600    IN    A    192.168.19.40
+
+  ;; SERVER: 192.168.19.10#53(192.168.19.10) (UDP)
+  ;; WHEN: Tue Oct 27 07:51:53 UTC 2026
+
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 ---
