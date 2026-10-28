@@ -111,6 +111,8 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
 
 - **Symptom (what we observed):**
   Most names resolved, but api did not return the app address. The lookup said NOERROR and authoritative, but the answer was wrong: 192.168.19.1 is the gateway in this scenario, not the app host. A "successful" lookup with the wrong value is a data fault, not a service fault.
+
+  Note on evidence: A separate live pre-fix dig for api on its own was not captured, because before Fault 1 the client timed out on everything (checker C2: got nothing), and before Fault 2 the server gave SERVFAIL. Once Faults 1 and 2 were fixed, the file comparison showed the fault: grep api gave 192.168.19.1, while params.py says api goes to 192.168.19.40.
 - **Hypothesis (what we suspected and why):**
   A wrong address typed in the forward zone file. params.py is the source of truth: it says api → 192.168.19.40 (ns1 .10, www .20, mail .30, api .40).
 - **Proof (the command that confirmed the cause):**
