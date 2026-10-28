@@ -143,7 +143,10 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
 
   ;; SERVER: 192.168.19.10#53(192.168.19.10) (UDP)
   ;; WHEN: Tue Oct 27 07:51:53 UTC 2026
+    ```
 
+    Final checker C2 3.0/3 — all four A records correct, including api → 192.168.19.40.
+  
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 ---
