@@ -38,6 +38,7 @@ For each AI suggestion that was WRONG or misleading, here is what it was and how
 - **ChatGPT counted four config faults, but that is not right.** It found db.MISSING, api .1, and DHCP 8.8.8.8 correctly, then added the made-up PTR fault to make four, and it missed the live firewall fault. The real total is three faults in files plus one live firewall fault, which is four faults in total.
 - **ChatGPT's serial suggestion was different, not wrong.** It said to raise the SOA serial to 2026102701 when fixing api. We raised it to 2024010102 instead. Raising the serial when you change a zone is good practice. The exact new number does not matter, so we did not count this as a mistake.
 - **ChatGPT got the other settings right.** It said `recursion no`, `listen-on { any; }`, `allow-query { any; }`, the DHCP pool, routers .1, lease times, and `INTERFACESv4="lan0"` are not faults. It also said a missing zone file alone would give SERVFAIL, not a timeout. That matches what we saw live: SERVFAIL only showed up after we removed the firewall rule.
+- Peer note by Hubert: Muse found the firewall only because it read setup.sh. On a real server with no setup script, it would have to check the live firewall itself.
 - Peer note by Chan: ChatGPT quoting the PTR record with a backslash shows why an AI quote must be checked against the actual file.
 
 ## Part 3d: Verdict
