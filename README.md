@@ -14,6 +14,8 @@ Group id used with the checker: lab01
 | Chan Myae Thaw Tar (Chan) | 6705140048 |
 | Aye Than Tin (Aye) | 6705140074 |
 
+ Peer review by Aye: Group, domain novapeak.lab, group id lab01 and all five members and GitHub usernames verified.
+
 ## What this repo contains
 
 ```
