@@ -41,6 +41,8 @@ For each AI suggestion that was WRONG or misleading, here is what it was and how
 - Peer note by Hubert: Muse found the firewall only because it read setup.sh. On a real server with no setup script, it would have to check the live firewall itself.
 - Peer note by Chan: ChatGPT quoting the PTR record with a backslash shows why an AI quote must be checked against the actual file.
 
+- Peer note by Ivan: Both AIs were right on Faults 2 and 3 only because they compared values to params.py. Syntax checks alone pass a wrong-but-valid value.
+  
 ## Part 3d: Verdict
 
 - Where our human diagnosis beat the AIs:
