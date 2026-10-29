@@ -21,7 +21,7 @@ We did our own diagnosis first, and wrote it in INCIDENT_LOG.md. These are the f
 3. `api.novapeak.lab` is 192.168.19.1 (the gateway) instead of 192.168.19.40.
 4. `dhcpd.conf` gives clients 8.8.8.8 instead of our DNS, 192.168.19.10.
 
-
+- Peer review by Aye: Comparison table covers all four faults, with both AIs judged per fault.
 - Peer review by Aye: Diagnosed-first list matches the four faults in INCIDENT_LOG.md.
 
 ## Part 3c: Putting the AIs to the test
