@@ -74,6 +74,8 @@ python3 /root/grading/check_lab.py --group lab01 --phase build
 
 Peer review by Hubert: Checker rows C1 and C4 verified against checker_result.txt.
 
+Peer review by Hubert: Baseline checker in session.log verified — C1 0/2, C2 got nothing, total 11.0/25.
+
 Peer review by Chan: Checker rows C6, C7 and C8 verified against checker_result.txt — lease .104, pool and gateway.
 
 Peer review by Chan: Checker rows C9, C10 and C11 verified against checker_result.txt — DNS, domain and client resolves www.
