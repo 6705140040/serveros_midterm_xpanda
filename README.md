@@ -49,6 +49,7 @@ Scenario, from `params.py lab01`: network `192.168.19.0/24`, gateway `192.168.19
 DNS ns1 `192.168.19.10`, www `.20`, mail `.30`, api `.40`,
 DHCP pool `192.168.19.104–192.168.19.144`, lease `3600`, interface `lan0`.
 
+Peer review by Ivan: Scenario values verified against params.py lab01 — network, gateway, ns1, www, mail, api and pool.
 ## Result
 
 Live checker in KillerCoda, 2026-10-27:
