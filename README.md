@@ -73,4 +73,7 @@ python3 /root/grading/check_lab.py --group lab01 --phase build
 | **Total** | **25.0 / 25** |
 
 Peer review by Chan: Checker rows C6, C7 and C8 verified against checker_result.txt — lease .104, pool and gateway.
+
+Peer review by Chan: Checker rows C9, C10 and C11 verified against checker_result.txt — DNS, domain and client resolves www.
+
 Baseline before the fixes was 11/25. Full output is in `checker_result.txt`.
