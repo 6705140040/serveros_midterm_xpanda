@@ -51,3 +51,4 @@ Speed and completeness. Once we pointed it at params.py as the source of truth, 
 
 - What we learned about trusting AI to diagnose a live system it cannot see:
 An AI sounding confident is not evidence. It can give you a perfect-looking config while missing the one fault that lives outside the files, and it can even quote a file wrong, like ChatGPT did with the PTR record. It also cannot run the checker from the client's point of view. So its "fixed" is always just a claim until a human checks it on the real system. The safe way to work is: diagnose from symptoms ourselves first, use the AI to cross-check values and suggest proof commands, and only accept a fix when a tool on the real system (named-checkconf, dig from the client, check_lab.py) confirms it.
+- Peer note by Hubert: An AI given only config files cannot find a live firewall rule, because that fault does not exist in any file.
