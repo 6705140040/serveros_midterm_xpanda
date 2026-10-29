@@ -208,6 +208,8 @@ $ ip netns exec client dig @192.168.19.10 -x 192.168.19.10     -> ns1.novapeak.l
 $ iptables -L INPUT -n                    -> no DROP rule on udp dpt:53
 $ cat /etc/default/isc-dhcp-server        -> INTERFACESv4="lan0"
 ```
+Peer review by Aye: Final checker total 25.0/25 verified, and all four A records resolve in the final block.
+
 Peer review by Ivan: Reverse PTRs 10, 20, 30 and 40 are correct, and checker C3 passes.
 
 Peer review by Hubert: named.conf.options was checked — listen-on any, allow-query any, recursion no — and needed no change.
