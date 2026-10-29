@@ -72,4 +72,5 @@ python3 /root/grading/check_lab.py --group lab01 --phase build
 | C11 — client resolves www via the leased resolver | 3/3 |
 | **Total** | **25.0 / 25** |
 
+Peer review by Chan: Checker rows C6, C7 and C8 verified against checker_result.txt — lease .104, pool and gateway.
 Baseline before the fixes was 11/25. Full output is in `checker_result.txt`.
