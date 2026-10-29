@@ -33,6 +33,8 @@ Live run in KillerCoda, 2026-10-27: baseline checker TOTAL 11.0 / 25, final chec
 | 3 | api points at the gateway | `db.novapeak.lab` | api → 192.168.19.40, checker C2 passes |
 | 4 | DHCP advertises 8.8.8.8 | `dhcpd.conf` | Checker C9 and C11 pass |
 
+- Peer review by Aye: Summary table verified against the four faults, files changed and confirmations.
+
 Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFACESv4="lan0"`, the DHCP pool, gateway, domain name, and lease times — we checked against params.py and it was already right.
 
 ---
