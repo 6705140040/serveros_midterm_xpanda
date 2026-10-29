@@ -40,7 +40,7 @@ Group id used with the checker: lab01
 
 ## Faults fixed
 
-1. Firewall rule dropping inbound UDP/53 removed — `iptables -D INPUT -p udp --dport 53 -j DROP`.
+1. Firewall rule dropping inbound UDP/53 removed — `iptables -D INPUT -p udp --dport 53 -j DROP`. Peer review by Hubert: Fault 1 description verified — the firewall fault has no file, as documented in the incident log.
 2. Forward zone file `db.MISSING` → `db.novapeak.lab` in `named.conf.local`, then `systemctl restart named`.
 3. api A record `192.168.19.1` (the gateway) → `192.168.19.40`, SOA serial `2024010101` → `2024010102`.
 4. DHCP resolver `8.8.8.8` → company DNS `192.168.19.10` in `dhcpd.conf`, then `systemctl restart isc-dhcp-server`.
