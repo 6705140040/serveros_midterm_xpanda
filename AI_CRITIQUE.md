@@ -48,6 +48,9 @@ For each AI suggestion that was WRONG or misleading, here is what it was and how
 
 - Peer note by Ivan: Both AIs were right on Faults 2 and 3 only because they compared values to params.py. Syntax checks alone pass a wrong-but-valid value.
   
+- Peer note by Aye: I learned that an AI answer is only a claim until a tool on the real system confirms it.
+
+
 ## Part 3d: Verdict
 
 - Where our human diagnosis beat the AIs:
