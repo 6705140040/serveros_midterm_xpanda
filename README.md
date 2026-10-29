@@ -33,6 +33,7 @@ Group id used with the checker: lab01
 ```
 
 - `fixed-configs/` — the configs we fixed. The firewall fault has no file, because it was a live rule. We wrote about it in INCIDENT_LOG.md, Fault 1. Peer review by Chan: fixed-configs contains exactly six files, as listed.
+- Peer review by Ivan: Forward and reverse zone files both serial 2024010102, all A records and PTRs correct.
 - `INCIDENT_LOG.md` — how we found and proved each of the 4 faults.
 - `AI_CRITIQUE.md` — what AI tools we used, how they did, and what we learned.
 - `session.log` — our recorded terminal session.
