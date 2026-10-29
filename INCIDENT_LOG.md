@@ -107,6 +107,7 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
   $ ip netns exec client dig @192.168.19.10 www.novapeak.lab A
   www.novapeak.lab.    3600    IN    A    192.168.19.20
   ```
+   Peer review by Ivan: After the fix, dig for www returned 192.168.19.20, confirming the zone now loads.
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 ---
