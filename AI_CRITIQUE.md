@@ -10,6 +10,8 @@ Members: Aung Myo Hlaing (Olary) — 6705140040, Hein Zaw Lin (Hubert) — 67051
 | Muse (Muse Spark, via Muse) | We used it to read the handout, compare the broken configs with `params.py`, and suggest commands and fixes. We checked every suggestion on the live system before we used it. See 3c. |
 | ChatGPT, run by the team on 2026-10-27 | We gave it only the broken config files and the symptom, and asked it to find every fault and give a proof command for each. Its answer is summarised in 3c below. |
 
+- Peer review by Aye: Declaration lists both tools used — Muse and ChatGPT.
+ 
 ## Part 3b: Confirm you diagnosed first
 
 We did our own diagnosis first, and wrote it in INCIDENT_LOG.md. These are the faults we found ourselves:
