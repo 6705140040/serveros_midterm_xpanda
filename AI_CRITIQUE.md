@@ -56,6 +56,8 @@ For each AI suggestion that was WRONG or misleading, here is what it was and how
 - Where our human diagnosis beat the AIs:
 The firewall fault. It is nowhere in the config files. It is a live rule on a running system. You only find it if you notice the symptom is a timeout, not SERVFAIL or REFUSED, and you think to look at `iptables -L` on the real machine. An AI that is only given files can only reason about files. Our method in the incident log — symptom, then hypothesis, then proof command — is what found it. The same method also caught the two "valid syntax, wrong value" faults (api address and DHCP resolver) that config-checking tools pass without complaint.
 
+- Peer note by Aye: Human diagnosis beat the AIs on the firewall fault, because it lives outside any config file.
+
 - Where an AI genuinely helped:
 Speed and completeness. Once we pointed it at params.py as the source of truth, it compared every value in every file against the scenario in seconds, said which checker items each fault would fail, and explained the timeout vs SERVFAIL difference clearly. As a cross-checker and explainer, it was genuinely useful — after we already had a hypothesis.
 
