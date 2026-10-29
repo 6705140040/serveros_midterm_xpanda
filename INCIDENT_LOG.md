@@ -93,6 +93,8 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
   ```
 
   The reverse zone loads fine. Only the forward zone's `file` path is wrong.
+
+  Peer review by Ivan: named.conf.local pointed to db.MISSING, and named-checkconf -z confirmed the forward zone failed to load.
 - **Fix (what we changed):**
   In `/etc/bind/named.conf.local`: `file "/etc/bind/db.MISSING";` → `file "/etc/bind/db.novapeak.lab";`, then `systemctl restart named`.
 - **Confirmation (output showing it now works):**
