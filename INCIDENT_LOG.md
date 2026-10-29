@@ -54,6 +54,7 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
   ```
 
   Rule 1 drops every inbound UDP packet to port 53 before named can see it.
+  Peer review by Hubert: I checked the iptables output — rule 1 drops UDP port 53, and removing it is the correct fix.
 - **Fix (what we changed):**
 
   ```bash
