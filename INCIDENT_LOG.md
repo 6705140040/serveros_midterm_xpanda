@@ -170,7 +170,7 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
   dhcpd-t-exit:0
   ```
 
-  These two facts together prove it: the advertised resolver is 8.8.8.8 while params.py says DHCP must advertise 192.168.19.10, and `dhcpd -t` exits 0, so the file is right in syntax. Syntax checking can never catch this. Only comparing the advertised value with the scenario does. (The rest of dhcpd.conf — pool .104–.144, routers .1, domain novapeak.lab, lease 3600/7200 — and INTERFACESv4="lan0" were all checked and are right.)
+  These two facts together prove it: the advertised resolver is 8.8.8.8 while params.py says DHCP must advertise 192.168.19.10, and `dhcpd -t` exits 0, so the file is right in syntax. Syntax checking can never catch this. Only comparing the advertised value with the scenario does. (The rest of dhcpd.conf — pool .104–.144, routers .1, domain novapeak.lab, lease 3600/7200 — and INTERFACESv4="lan0" were all checked and are right.) Peer review by Chan: DHCP pool 192.168.19.104–144, routers 192.168.19.1, domain novapeak.lab and lease 3600/7200 were already correct.
 - **Fix (what we changed):**
   In `/etc/dhcp/dhcpd.conf`: `option domain-name-servers 8.8.8.8;` → `option domain-name-servers 192.168.19.10;`, then `systemctl restart isc-dhcp-server`.
 - **Confirmation (output showing it now works):**
