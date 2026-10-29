@@ -153,6 +153,7 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
     ```
 
     Final checker C2 3.0/3 — all four A records correct, including api → 192.168.19.40.
+  Peer review by Ivan: Symptom note verified — no separate pre-fix live dig was captured because Fault 1 timed out and Fault 2 gave SERVFAIL. Post-fix dig for api returned 192.168.19.40, matching params.py and checker C2.
   
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
