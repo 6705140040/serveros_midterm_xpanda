@@ -65,6 +65,7 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
 - **Confirmation (output showing it now works):**
   A second `iptables -L INPUT -n --line-numbers` was empty — no DROP rule left.
   After this fix, queries reached named and the failure changed from timeout to SERVFAIL. That proved the firewall was only the first fault, and it showed Fault 2 underneath it.
+  Peer review by Hubert: After the firewall fix, the failure changed from timeout to SERVFAIL, which matches the checker and shows Fault 2 underneath.
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 ---
