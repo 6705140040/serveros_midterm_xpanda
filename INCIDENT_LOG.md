@@ -175,7 +175,8 @@ Everything else — named.conf.options, the reverse zone and its PTRs, `INTERFAC
   In `/etc/dhcp/dhcpd.conf`: `option domain-name-servers 8.8.8.8;` → `option domain-name-servers 192.168.19.10;`, then `systemctl restart isc-dhcp-server`.
 - **Confirmation (output showing it now works):**
   Final checker: C9 3/3 (DHCP advertises the company DNS 192.168.19.10) and C11 3/3 (client resolves www via the leased resolver).
-  Peer review by Chan: dhcpd.conf advertises 192.168.19.10, not 8.8.8.8, and checker C9 and C11 pass and INTERFACESv4="lan0" in isc-dhcp-server was checked and needed no change.
+  
+- Peer review by Chan: dhcpd.conf advertises 192.168.19.10, not 8.8.8.8, and checker C9 and C11 pass and INTERFACESv4="lan0" in isc-dhcp-server was checked and needed no change.
 - **Found/proved by:** Aung Myo Hlaing (Olary) — live KillerCoda run, 2026-10-27
 
 ---
